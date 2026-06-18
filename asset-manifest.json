@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/music-front-app/static/css/main.b9877648.css",
-    "main.js": "/music-front-app/static/js/main.c161fa27.js",
-    "static/js/453.dadb12f6.chunk.js": "/music-front-app/static/js/453.dadb12f6.chunk.js",
-    "static/media/monkey.jpg": "/music-front-app/static/media/monkey.b510e42d3c5dde3533d4.jpg",
-    "index.html": "/music-front-app/index.html",
-    "main.b9877648.css.map": "/music-front-app/static/css/main.b9877648.css.map",
-    "main.c161fa27.js.map": "/music-front-app/static/js/main.c161fa27.js.map",
-    "453.dadb12f6.chunk.js.map": "/music-front-app/static/js/453.dadb12f6.chunk.js.map"
+    "main.css": "/static/css/main.b9877648.css",
+    "main.js": "/static/js/main.47c849b4.js",
+    "static/js/453.dadb12f6.chunk.js": "/static/js/453.dadb12f6.chunk.js",
+    "static/media/monkey.jpg": "/static/media/monkey.b510e42d3c5dde3533d4.jpg",
+    "index.html": "/index.html",
+    "main.b9877648.css.map": "/static/css/main.b9877648.css.map",
+    "main.47c849b4.js.map": "/static/js/main.47c849b4.js.map",
+    "453.dadb12f6.chunk.js.map": "/static/js/453.dadb12f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b9877648.css",
-    "static/js/main.c161fa27.js"
+    "static/js/main.47c849b4.js"
   ]
 }
