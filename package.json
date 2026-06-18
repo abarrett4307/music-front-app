@@ -1,7 +1,7 @@
 {
   "name": "music-front-app",
   "version": "0.1.0",
-  "homepage": "https://abarrett4307.github.io/music-front-app/",
+  "homepage": "https://abarrett4307.github.io/music-front-app",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
