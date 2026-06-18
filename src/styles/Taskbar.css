@@ -1,0 +1,15 @@
+#Taskbar {
+    height: 3.5vh;
+    font-size: 2vh;
+    text-align: left;
+    padding-top: 0.5vh;
+    padding-left: 1vh;
+    background-color: #3d251e;
+}
+
+.LinkButton {
+    color:rgb(255, 255, 255);
+}
+.LinkButton:hover {
+    color: #7c7c7c;;
+}

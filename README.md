@@ -2,9 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Deployed using Github Pages 
+https://github.com/gitname/react-gh-pages
+
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run deploy`
+creates a package to be sent to 'gh-pages' branch, 
+updates deployed on website:
+[https://abarrett4307.github.io/music-front-app/](https://abarrett4307.github.io/music-front-app/)
 
 ### `npm start`
 
@@ -44,3 +54,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
