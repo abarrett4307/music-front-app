@@ -1,8 +1,8 @@
-.Signup {
+.Login {
     text-align: center;
 }
 
-.Signup-header {
+.Login-header {
     text-align: center;
     background-color: #8b6c5c;
     min-height: 68vh;
@@ -20,7 +20,8 @@
 }
 
 
-.create-button {
+
+.login-button {
   justify-content: center;
   background-color:#f5ffd1;
   align-items: center;
@@ -34,7 +35,7 @@
   cursor: pointer;
 }
 
-#login-prompt {
+#signup-prompt {
     margin: 2vh;
     font-size: 2vh;
 }

@@ -1,0 +1,19 @@
+.Inputbox {
+    justify-content: center;
+    background-color:#af9576;
+    align-items: center;
+    border-radius: 6px;
+    min-height: 20px;
+    height: 5vmin;
+    width: 35vmin;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size:80%;
+}
+
+.RedirectButton {
+    color:rgb(248, 192, 108);
+}
+.RedirectButton:hover {
+    color: rgb(248, 108, 108);
+}

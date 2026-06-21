@@ -7,12 +7,15 @@ function Home() {
   return (
     <div className="Home">
       <header className="Home-header">
-        <img src={monkey} className="Home-logo" alt="monkey" />
+        <img src={monkey} id="Img-logo" alt="monkey" />
+        <p id="name-logo"> 
+          The Music Nest
+        </p>
         <p>
           ENTER THE MUSIC ZONE
         </p>
           <Link to='/login'>
-          <button className='basic-button' >Log-in</button>
+          <button className='basic-button' >Login</button>
           </Link>
           <Link to='/signup'>
           <button className='basic-button' >Sign up</button>
