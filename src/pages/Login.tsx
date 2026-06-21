@@ -17,8 +17,12 @@ function Login() {
     setPassword(event.target.value);
   };
 
-  function loginAccount() {
-    alert(`Username: ${username}\nPassword: ${password}`);
+  async function loginAccount() {
+    const response = await fetch('/music-front-app/signup/api', {
+      method: "GET"/*,
+      body: JSON.stringify({ username:{username},password:{password} }), */
+    }).then(response => response.json())
+    alert(response.message);
   }
   
   return (
