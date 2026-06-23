@@ -1,9 +1,8 @@
-import React, {useState , ChangeEvent} from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import React, {createContext, useContext, useState , ChangeEvent} from 'react';
+import { BrowserRouter, Route, Routes, Link, useNavigate } from 'react-router-dom';
 import Taskbar from '../components/Taskbar';
 import '../styles/Login.css'
 import '../styles/Basics.css'
-
 
 function Login() {
   
@@ -18,11 +17,22 @@ function Login() {
   };
 
   async function loginAccount() {
-    const response = await fetch('/music-front-app/signup/api', {
-      method: "GET"/*,
-      body: JSON.stringify({ username:{username},password:{password} }), */
-    }).then(response => response.json())
-    alert(response.message);
+    const response = await fetch('/music-front-app/login/api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        username: username,
+        password: password }), 
+    }).then(response => response.json());
+    alert(response.status);
+  }
+
+  function useLogin() {
+    const navigate = useNavigate();
+    navigate("/dashboard", { replace: true } );
+
   }
   
   return (
