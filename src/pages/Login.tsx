@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useState , ChangeEvent} from 'react';
-import { BrowserRouter, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link, useNavigate, Navigate } from 'react-router-dom';
 import Taskbar from '../components/Taskbar';
 import '../styles/Login.css'
 import '../styles/Basics.css'
@@ -28,17 +28,11 @@ function Login() {
     }).then(response => response.json());
     alert(response.status);
   }
-
-  function useLogin() {
-    const navigate = useNavigate();
-    navigate("/dashboard", { replace: true } );
-
-  }
   
   return (
     <div className='Login'>
       <Taskbar/> 
-      <header className='Login-header'>
+      <div className='Login-header'>
         <p className='Title'>Log in to your account</p>
         <input placeholder='Username' className='Inputbox' value={username} onChange={handleChangeUser}></input>
         <input placeholder='Password' className='Inputbox' value={password} onChange={handleChangePassword}></input>
@@ -51,7 +45,7 @@ function Login() {
           <text> if you do not have an account</text>
         </div>
         
-      </header>
+      </div>
     </div>
   );
 }

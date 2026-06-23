@@ -9,6 +9,10 @@ function Taskbar() {
                 <Link className='LinkButton' to='/'>
                     <text>Home</text>
                 </Link>
+                
+                <Link className='LinkButton' to='/dashboard'>
+                    <text>Dashboard</text>
+                </Link>
         </div>
     )
 }

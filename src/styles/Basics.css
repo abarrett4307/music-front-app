@@ -17,3 +17,9 @@
 .RedirectButton:hover {
     color: rgb(248, 108, 108);
 }
+
+.Page-title {
+  font-size: 6vmin;
+  margin: 1vmin;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

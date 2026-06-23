@@ -28,7 +28,7 @@ function Signup() {
   return (
     <div className='Signup'>
       <Taskbar/> 
-      <header className='Signup-header'>
+      <div className='Signup-header'>
         <p className='Title'> Sign-up for a new account</p>
         <input placeholder='Username' className='Inputbox' value={username} onChange={handleChangeUser}></input>
         <input placeholder='Password' className='Inputbox' value={password} onChange={handleChangePassword}></input>
@@ -41,7 +41,7 @@ function Signup() {
           <text> if you already have an account</text>
         </div>
         
-      </header>
+      </div>
     </div>
   );
 }

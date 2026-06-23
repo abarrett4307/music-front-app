@@ -6,7 +6,7 @@ import '../styles/Home.css';
 function Home() {
   return (
     <div className="Home">
-      <header className="Home-header">
+      <div className="Home-header">
         <img src={monkey} id="Img-logo" alt="monkey" />
         <p id="name-logo"> 
           The Music Nest
@@ -20,7 +20,7 @@ function Home() {
           <Link to='/signup'>
           <button className='basic-button' >Sign up</button>
           </Link>
-      </header>
+      </div>
     </div>
   );
 }

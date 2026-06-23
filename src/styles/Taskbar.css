@@ -9,6 +9,7 @@
 
 .LinkButton {
     color:rgb(255, 255, 255);
+    margin-right: 2vw;
 }
 .LinkButton:hover {
     color: #7c7c7c;;
