@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/music-front-app/static/css/main.01200220.css",
-    "main.js": "/music-front-app/static/js/main.5ececd70.js",
+    "main.js": "/music-front-app/static/js/main.1ecbda3a.js",
     "static/js/453.dadb12f6.chunk.js": "/music-front-app/static/js/453.dadb12f6.chunk.js",
     "static/media/monkey.jpg": "/music-front-app/static/media/monkey.b510e42d3c5dde3533d4.jpg",
     "index.html": "/music-front-app/index.html",
     "main.01200220.css.map": "/music-front-app/static/css/main.01200220.css.map",
-    "main.5ececd70.js.map": "/music-front-app/static/js/main.5ececd70.js.map",
+    "main.1ecbda3a.js.map": "/music-front-app/static/js/main.1ecbda3a.js.map",
     "453.dadb12f6.chunk.js.map": "/music-front-app/static/js/453.dadb12f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.01200220.css",
-    "static/js/main.5ececd70.js"
+    "static/js/main.1ecbda3a.js"
   ]
 }
