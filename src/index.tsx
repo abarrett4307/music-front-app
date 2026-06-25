@@ -1,15 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import { basename } from 'path';
+
+const router = createBrowserRouter([
+  {
+  path:'/',
+  element:<Home />,
+  errorElement: <div>error: <Link to='/'>Return Home</Link></div>
+  },
+  {
+    path:'/login',
+    element:<Login />,
+  },
+  {
+    path:'/signup',
+    element:<Signup />,
+  },
+  {
+    path:'/dashboard',
+    element:<Dashboard />,
+  }
+], {basename:'/music-front-app'});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
