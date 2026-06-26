@@ -1,6 +1,8 @@
 import React from 'react';
 import Taskbar from "../components/Taskbar";
+import Itemlist from '../components/Itemlist';
 import '../styles/Dashboard.css'
+import '../styles/Basics.css'
 
 function Dashboard() {
     return (
@@ -10,20 +12,20 @@ function Dashboard() {
                 <text className='Page-title'> My Dashboard</text>
             <div id='boxes-items'>
                 <div  className="Box-list" id="left-items">
-                    <div className="Item-list" id="music">
-                        <text> music</text>
-                    </div>
-                    <div className="Item-list" id="tiers" >
-                        tiers
-                    </div>
+                    <Itemlist title="Music">
+                        list
+                    </Itemlist>
+                    <Itemlist title="Tiers" >
+                        list
+                    </Itemlist>
                 </div>
                 <div className="Box-list" id="right-items">
-                    <div className="Item-list" id="friends">
-                        <text>friends</text>
-                    </div>
-                    <div className="Item-list" id="clubs">
-                        <text>clubs</text>
-                    </div>
+                    <Itemlist title="Friends">
+                        list
+                    </Itemlist>
+                    <Itemlist title="Clubs">
+                        list
+                    </Itemlist>
                 </div>
             </div>
             </div>

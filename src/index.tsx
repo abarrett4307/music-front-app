@@ -4,7 +4,6 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 
 import './index.css';
-import App from './App';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Signup from './pages/Signup';

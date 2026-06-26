@@ -1,0 +1,17 @@
+.Item-list {
+    display:flex;
+    background-color: #949494;
+    border-radius: 6px;
+    border-color: rgb(76, 76, 76);
+    border-style: solid;
+    min-height: 20vh;
+    height: auto;
+    width: 95%;
+    margin-bottom: 2vmin;
+    flex-direction: column;
+}
+
+.Box-title {
+    margin-left: 1vw;
+    font-size:x-large;
+}
