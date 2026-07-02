@@ -1,12 +1,19 @@
 #Taskbar {
+    display: flex;
     height: 3.5vh;
     font-size: 2vh;
-    text-align: left;
     padding-top: 0.5vh;
     padding-left: 1vh;
     background-color: #3d251e;
 }
 
+#left {
+    text-align: left;
+}
+
+#right {
+    text-align: right;
+}
 .LinkButton {
     color:rgb(255, 255, 255);
     margin-right: 2vw;

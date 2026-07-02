@@ -20,7 +20,7 @@ function Signup() {
     const response = await fetch('/music-front-app/login/api', {
       method: 'GET'
     }).then(response => response.json());
-    alert(response.status);
+    alert(response[1].username);
     
   }
   
