@@ -17,10 +17,16 @@ function Signup() {
   };
 
     async function createAccount() {
-    const response = await fetch('/music-front-app/login/api', {
-      method: 'GET'
+    const response = await fetch('/music-front-app/signup/api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        username: username,
+        password: password })
     }).then(response => response.json());
-    alert(response[1].username);
+    alert(response.message);
     
   }
   
