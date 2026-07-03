@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/music-front-app/static/css/main.4f36b3be.css",
-    "main.js": "/music-front-app/static/js/main.cbcb6a15.js",
+    "main.css": "/music-front-app/static/css/main.65c98bbb.css",
+    "main.js": "/music-front-app/static/js/main.7de9bfa0.js",
     "static/js/453.dadb12f6.chunk.js": "/music-front-app/static/js/453.dadb12f6.chunk.js",
     "static/media/monkey.jpg": "/music-front-app/static/media/monkey.b510e42d3c5dde3533d4.jpg",
     "index.html": "/music-front-app/index.html",
-    "main.4f36b3be.css.map": "/music-front-app/static/css/main.4f36b3be.css.map",
-    "main.cbcb6a15.js.map": "/music-front-app/static/js/main.cbcb6a15.js.map",
+    "main.65c98bbb.css.map": "/music-front-app/static/css/main.65c98bbb.css.map",
+    "main.7de9bfa0.js.map": "/music-front-app/static/js/main.7de9bfa0.js.map",
     "453.dadb12f6.chunk.js.map": "/music-front-app/static/js/453.dadb12f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f36b3be.css",
-    "static/js/main.cbcb6a15.js"
+    "static/css/main.65c98bbb.css",
+    "static/js/main.7de9bfa0.js"
   ]
 }
