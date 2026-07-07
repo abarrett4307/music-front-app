@@ -28,6 +28,8 @@ function Login() {
         password: password }), 
     }).then(response => response.json()).then((response) => {
       if(response.status =='0') {
+        localStorage.setItem('user', username);
+        localStorage.setItem('jwt', response.auth_token);
         navigate('/dashboard');
       }
       else {

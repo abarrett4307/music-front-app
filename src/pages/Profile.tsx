@@ -2,23 +2,42 @@ import React from 'react';
 import Taskbar from '../components/Taskbar';
 import Itemlist from '../components/Itemlist';
 import "../styles/Basics.css";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
 
 function Profile() {
-    let { profid } = useParams();
-    if (profid == "") {
-//set to browser cached signed in ID
-        profid = '1'; 
+    let params = useParams();
+    var user = getUser();
+    let navigate = useNavigate();
+
+    function getUser() {
+        console.log(params);
+        console.log(params.id);
+        if (params.id == undefined) {
+            //set to browser cached signed in ID
+            var name = localStorage.getItem('user');
+            if (!name) {
+                alert('login');
+                return "";
+            }
+            else {
+                return name;       
+            }
+        }
+        else {
+            alert('und');
+            return params.id;
+        }
     }
 
-    async function getProfileInformation(id : number) {
+    async function getProfileInformation(username : string) {
         const response = await fetch('/music-front-app/profile/api', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ 
-                id: {id}}), 
+                username: {username}}), 
         }).then(response => response.json());
     }
 
@@ -28,7 +47,7 @@ function Profile() {
         <div>
             <Taskbar />
             <div className="Background">
-                <text className='Page-title'> usernames Profile</text>
+                <text className='Page-title'> {user}'s' Profile </text>
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <Itemlist title="Music">
