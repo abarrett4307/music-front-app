@@ -1,5 +1,5 @@
 import React, {useState , ChangeEvent} from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link, useNavigate } from 'react-router-dom';
 import Taskbar from '../components/Taskbar';
 import '../styles/Signup.css'
 import '../styles/Basics.css'
@@ -8,7 +8,8 @@ function Signup() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  
+  const navigate = useNavigate();
+
   const handleChangeUser = (event: ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   };
@@ -26,8 +27,12 @@ function Signup() {
         username: username,
         password: password })
     }).then(response => response.json());
-    alert(response.message);
-    
+    if(response.status == '0') {
+      navigate('/login');
+    }
+    else {
+      alert(response.status);
+    }
   }
   
   

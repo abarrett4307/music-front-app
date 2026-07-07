@@ -4,10 +4,10 @@ import "../styles/TierList.css";
 import { useParams } from 'react-router-dom';
 
 function TierList() {
-    const { id } = useParams();
+    const { listid } = useParams();
 
-    function fetchList(listid : number) {
-        return listid;
+    function fetchList(id : number) {
+        return id;
     }
     
     return (

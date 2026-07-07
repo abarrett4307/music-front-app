@@ -1,0 +1,22 @@
+
+
+#boxes-items {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1vmin;
+}
+
+#left-items {
+    width: 80vw;
+}
+#right-items {
+    width: 20vw;
+    margin-left: 5vw;
+}
+
+.Box-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8b6c5c;
+}

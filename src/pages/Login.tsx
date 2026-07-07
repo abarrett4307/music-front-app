@@ -1,5 +1,5 @@
 import React, {useState , ChangeEvent} from 'react';
-import {Link, useNavigate, Navigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import Taskbar from '../components/Taskbar';
 import '../styles/Login.css'
 import '../styles/Basics.css'
@@ -8,7 +8,8 @@ function Login() {
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  
+  const navigate = useNavigate();
+
   const handleChangeUser = (event: ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   };
@@ -25,8 +26,15 @@ function Login() {
       body: JSON.stringify({ 
         username: username,
         password: password }), 
-    }).then(response => response.json());
-    alert(response.status);
+    }).then(response => response.json()).then((response) => {
+      if(response.status =='0') {
+        navigate('/dashboard');
+      }
+      else {
+        alert(response.status);
+      }
+    });
+
   }
   
   return (
