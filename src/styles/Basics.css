@@ -20,7 +20,8 @@
 
 .Page-title {
   font-size: 4vmin;
-  margin: 1vmin;
+  margin:0;
+  margin-left: 1vw;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 

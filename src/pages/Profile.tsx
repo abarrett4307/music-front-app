@@ -3,12 +3,17 @@ import Taskbar from '../components/Taskbar';
 import ListBox from '../components/ListBox';
 import "../styles/Basics.css";
 import { useParams, useNavigate } from 'react-router-dom';
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect,useState } from 'react';
+import fetchSongs from '../utils/fetchSongs';
 
 function Profile() {
     let params = useParams();
-    var user = getUser();
+    let user = getUser();
     let navigate = useNavigate();
+    let songs = [];
+    const [songItems, setSongItems] = useState('');
+
+
 
     function getUser() {
         console.log(params);
@@ -34,10 +39,8 @@ function Profile() {
     }, []);
 
     async function getProfileInformation(username : string) {
-        const response = await fetch(`/music-front-app/profile/api/${username}/songs`, {
-            method: 'GET',
-        }).then(response => response.json());
-        alert(response);
+        let songs = await fetchSongs(username);
+        setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
     }
 
     
@@ -50,11 +53,10 @@ function Profile() {
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type="music">
-                            list
-                            
+                            <ul>{songItems}</ul>
                         </ListBox>
                         <ListBox title="Tiers" type='tier'>
-                            list
+                            tiers
                         </ListBox>
                     </div>
                     <div className="Box-list" id="right-items">

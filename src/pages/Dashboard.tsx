@@ -17,7 +17,7 @@ function Dashboard() {
         <div>
             <Taskbar />
             <div className='Background'>
-                <h1 className='Page-title'> My Dashboard</h1>
+                <p className='Page-title'> My Dashboard</p>
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type='music'>
