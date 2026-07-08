@@ -19,7 +19,7 @@
 }
 
 .Page-title {
-  font-size: 6vmin;
+  font-size: 4vmin;
   margin: 1vmin;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -27,4 +27,5 @@
 .Background {
     background-color: #8b6c5c;
     min-height: 96vh;
+    padding: 0%;
 }

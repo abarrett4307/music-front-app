@@ -1,33 +1,41 @@
 import React from 'react';
+
 import Taskbar from "../components/Taskbar";
-import Itemlist from '../components/Itemlist';
+import ListBox from '../components/ListBox';
 import '../styles/Dashboard.css'
 import '../styles/Basics.css'
+import { useLayoutEffect } from 'react';
 
 function Dashboard() {
+
+    useLayoutEffect(() => {
+            
+    }, []);
+
+
     return (
         <div>
             <Taskbar />
-            <div id="dashboard-main">
-                <text className='Page-title'> My Dashboard</text>
-            <div id='boxes-items'>
-                <div  className="Box-list" id="left-items">
-                    <Itemlist title="Music">
-                        list
-                    </Itemlist>
-                    <Itemlist title="Tiers" >
-                        list
-                    </Itemlist>
+            <div className='Background'>
+                <h1 className='Page-title'> My Dashboard</h1>
+                <div id='boxes-items'>
+                    <div  className="Box-list" id="left-items">
+                        <ListBox title="Music" type='music'>
+                            list
+                        </ListBox>
+                        <ListBox title="Tiers" type='tier'>
+                            list
+                        </ListBox>
+                    </div>
+                    <div className="Box-list" id="right-items">
+                        <ListBox title="Friends" type='friend'>
+                            list
+                        </ListBox>
+                        <ListBox title="Clubs" type='club'>
+                            list
+                        </ListBox>
+                    </div>
                 </div>
-                <div className="Box-list" id="right-items">
-                    <Itemlist title="Friends">
-                        list
-                    </Itemlist>
-                    <Itemlist title="Clubs">
-                        list
-                    </Itemlist>
-                </div>
-            </div>
             </div>
             
         </div>

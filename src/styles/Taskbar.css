@@ -5,14 +5,18 @@
     padding-top: 0.5vh;
     padding-left: 1vh;
     background-color: #3d251e;
+    flex-direction: row;
 }
 
 #left {
     text-align: left;
+    width: 50vw
 }
 
 #right {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    width: 50vw;
 }
 .LinkButton {
     color:rgb(255, 255, 255);

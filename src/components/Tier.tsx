@@ -2,13 +2,13 @@ import React, { ReactNode } from "react";
 import '../styles/TierList.css'
 
 
-interface ItemlistProps {
+interface ListBoxProps {
     tiername: string;
     children: ReactNode | ReactNode[];
 }
 
 
-function Tier(props : ItemlistProps) {
+function Tier(props : ListBoxProps) {
     return(
         <div id='tier'>
             <div className='tiertitle'>

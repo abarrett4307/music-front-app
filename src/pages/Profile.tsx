@@ -1,6 +1,6 @@
 import React from 'react';
 import Taskbar from '../components/Taskbar';
-import Itemlist from '../components/Itemlist';
+import ListBox from '../components/ListBox';
 import "../styles/Basics.css";
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLayoutEffect } from 'react';
@@ -25,20 +25,19 @@ function Profile() {
             }
         }
         else {
-            alert('und');
             return params.id;
         }
     }
 
+    useLayoutEffect(() => {
+        getProfileInformation(user);
+    }, []);
+
     async function getProfileInformation(username : string) {
-        const response = await fetch('/music-front-app/profile/api', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ 
-                username: {username}}), 
+        const response = await fetch(`/music-front-app/profile/api/${username}/songs`, {
+            method: 'GET',
         }).then(response => response.json());
+        alert(response);
     }
 
     
@@ -47,23 +46,24 @@ function Profile() {
         <div>
             <Taskbar />
             <div className="Background">
-                <text className='Page-title'> {user}'s' Profile </text>
+                <text className='Page-title'> {user}'s  Profile </text>
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
-                        <Itemlist title="Music">
+                        <ListBox title="Music" type="music">
                             list
-                        </Itemlist>
-                        <Itemlist title="Tiers" >
+                            
+                        </ListBox>
+                        <ListBox title="Tiers" type='tier'>
                             list
-                        </Itemlist>
+                        </ListBox>
                     </div>
                     <div className="Box-list" id="right-items">
-                        <Itemlist title="Friends">
+                        <ListBox title="Friends" type='friend'>
                             list
-                        </Itemlist>
-                        <Itemlist title="Clubs">
+                        </ListBox>
+                        <ListBox title="Clubs" type='club'>
                             list
-                        </Itemlist>
+                        </ListBox>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,14 @@
 import React from 'react';
 import { ReactNode } from 'react';
-import '../styles/Itemlist.css'
+import '../styles/ListBox.css'
 
-interface ItemlistProps {
-    title: string;
-    children: ReactNode | ReactNode[];
+interface ListBoxProps {
+    title : string;
+    type : string;
+    children : ReactNode | ReactNode[];
 }
 
-function Itemlist(props : ItemlistProps) {
+function ListBox(props : ListBoxProps) {
     return (
         <div className="Item-list">
             <text className='Box-title'> {props.title}</text>
@@ -21,4 +22,4 @@ function Itemlist(props : ItemlistProps) {
 }
 
 
-export default Itemlist;
+export default ListBox;

@@ -15,10 +15,10 @@ function Home() {
           ENTER THE MUSIC ZONE
         </p>
           <Link to='/login'>
-          <button className='basic-button' >Login</button>
+            <button className='basic-button' >Login</button>
           </Link>
           <Link to='/signup'>
-          <button className='basic-button' >Sign up</button>
+            <button className='basic-button' >Sign up</button>
           </Link>
       </div>
     </div>
