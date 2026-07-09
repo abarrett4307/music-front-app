@@ -8,7 +8,7 @@ import fetchSongs from '../utils/fetchSongs';
 
 function Profile() {
     let params = useParams();
-    let user = getUser();
+    var user = getUser();
     let navigate = useNavigate();
     let songs = [];
     const [songItems, setSongItems] = useState('');
@@ -16,18 +16,9 @@ function Profile() {
 
 
     function getUser() {
-        console.log(params);
-        console.log(params.id);
         if (params.id == undefined) {
             //set to browser cached signed in ID
-            var name = localStorage.getItem('user');
-            if (!name) {
-                alert('login');
-                return "";
-            }
-            else {
-                return name;       
-            }
+            return localStorage.getItem('user');
         }
         else {
             return params.id;
@@ -35,7 +26,13 @@ function Profile() {
     }
 
     useLayoutEffect(() => {
-        getProfileInformation(user);
+        if (user == null) {
+            alert('login to view your profile');
+            navigate('/login');
+        }
+        else {
+            getProfileInformation(user);
+        }
     }, []);
 
     async function getProfileInformation(username : string) {
@@ -49,7 +46,7 @@ function Profile() {
         <div>
             <Taskbar />
             <div className="Background">
-                <text className='Page-title'> {user}'s  Profile </text>
+                <p className='Page-title'> {user}'s  Profile </p>
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type="music">
