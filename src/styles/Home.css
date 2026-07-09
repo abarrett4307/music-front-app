@@ -1,7 +1,3 @@
-.Home {
-  text-align: center;
-}
-
 #Img-logo {
   height: 35vmin;
   pointer-events: none;
@@ -29,6 +25,7 @@
 }
 
 .Home-header {
+  text-align: center;
   background-color: #8b6c5c;
   min-height: 100vh;
   display: flex;
@@ -42,4 +39,3 @@
 .Home-link {
   color: #61dafb;
 }
-

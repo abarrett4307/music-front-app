@@ -1,4 +1,3 @@
-import React from 'react';
 import Taskbar from '../components/Taskbar';
 import ListBox from '../components/ListBox';
 import "../styles/Basics.css";
@@ -25,6 +24,12 @@ function Profile() {
         }
     }
 
+    async function getProfileInformation(username : string) {
+        let songs = await fetchSongs(username);
+        setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
+    }
+
+
     useLayoutEffect(() => {
         if (user == null) {
             alert('login to view your profile');
@@ -35,14 +40,8 @@ function Profile() {
         }
     }, []);
 
-    async function getProfileInformation(username : string) {
-        let songs = await fetchSongs(username);
-        setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
-    }
 
-    
-    
-//set data to fetch and display from server
+
     return (
         <div>
             <Taskbar />

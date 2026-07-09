@@ -1,14 +1,15 @@
-import React, {useState , ChangeEvent} from 'react';
-import { BrowserRouter, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import {useState , ChangeEvent} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Taskbar from '../components/Taskbar';
 import '../styles/Signup.css'
 import '../styles/Basics.css'
 
 function Signup() {
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+
 
   const handleChangeUser = (event: ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
@@ -17,7 +18,7 @@ function Signup() {
     setPassword(event.target.value);
   };
 
-    async function createAccount() {
+  async function createAccount() {
     const response = await fetch('/music-front-app/signup/api', {
       method: 'POST',
       headers: {
@@ -35,6 +36,7 @@ function Signup() {
     }
   }
   
+
   
   return (
     <div className='Signup'>

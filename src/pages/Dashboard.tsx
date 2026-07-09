@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Taskbar from "../components/Taskbar";
 import ListBox from '../components/ListBox';
 import '../styles/Dashboard.css'
@@ -7,7 +5,6 @@ import '../styles/Basics.css'
 import fetchSongs from '../utils/fetchSongs';
 import { useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { isArrayLiteralExpression } from 'typescript';
 
 function Dashboard() {
     const [songItems,setSongItems] = useState('');
