@@ -4,14 +4,35 @@ import Taskbar from "../components/Taskbar";
 import ListBox from '../components/ListBox';
 import '../styles/Dashboard.css'
 import '../styles/Basics.css'
-import { useLayoutEffect } from 'react';
+import fetchSongs from '../utils/fetchSongs';
+import { useLayoutEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { isArrayLiteralExpression } from 'typescript';
 
 function Dashboard() {
+    const [songItems,setSongItems] = useState('');
+    const user = localStorage.getItem('user');
+    const navigate = useNavigate();
 
     useLayoutEffect(() => {
-            
+        if (user) {
+            getProfileInformation(user);
+        }
+        else {
+            alert('log in to view your dashboard');            
+            navigate('/login');
+        }
     }, []);
 
+    async function getProfileInformation(username : string) {
+        let songs = await fetchSongs(username);
+        setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
+    }
+
+
+    function loadForm() {
+        alert('not yet implemented');
+    }
 
     return (
         <div>
@@ -21,7 +42,8 @@ function Dashboard() {
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type='music'>
-                            list
+                            <button className='Add-button' onClick={loadForm}>Add Song Rating</button>
+                            <ul>{songItems}</ul>
                         </ListBox>
                         <ListBox title="Tiers" type='tier'>
                             list
