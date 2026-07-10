@@ -5,9 +5,11 @@ import '../styles/Basics.css'
 import fetchSongs from '../utils/fetchSongs';
 import { useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import fetchFriends from "../utils/fetchFriends";
 
 function Dashboard() {
     const [songItems,setSongItems] = useState('');
+    const [friendItems,setFriendItems] = useState('');
     const user = localStorage.getItem('user');
     const navigate = useNavigate();
 
@@ -24,6 +26,8 @@ function Dashboard() {
     async function getProfileInformation(username : string) {
         let songs = await fetchSongs(username);
         setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
+        let friends = await fetchFriends(username);
+        setFriendItems(friends.map((friend: any) => <li>{JSON.stringify(friend)}</li>));
     }
 
 
@@ -40,7 +44,7 @@ function Dashboard() {
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type='music'>
                             <button className='Add-button' onClick={loadForm}>Add Song Rating</button>
-                            <ul>{songItems}</ul>
+                            <ul className="Item-list">{songItems}</ul>
                         </ListBox>
                         <ListBox title="Tiers" type='tier'>
                             list
@@ -48,7 +52,8 @@ function Dashboard() {
                     </div>
                     <div className="Box-list" id="right-items">
                         <ListBox title="Friends" type='friend'>
-                            list
+                            <button className='Add-button' onClick={loadForm}>Add Friend</button>
+                            <ul className="Item-list">{friendItems}</ul>
                         </ListBox>
                         <ListBox title="Clubs" type='club'>
                             list

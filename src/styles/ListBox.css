@@ -1,4 +1,4 @@
-.Item-list {
+.List-box {
     display:flex;
     background-color: #949494;
     border-radius: 6px;
@@ -9,6 +9,9 @@
     width: 95%;
     margin-bottom: 2vmin;
     flex-direction: column;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size:medium;
 }
 
 .Box-title {

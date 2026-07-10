@@ -10,7 +10,7 @@ interface ListBoxProps {
 
 function ListBox(props : ListBoxProps) {
     return (
-        <div className="Item-list">
+        <div className="List-box">
             <text className='Box-title'> {props.title}</text>
             <div style={{height:2,backgroundColor:'black',marginBottom:3}} />
                 <div>

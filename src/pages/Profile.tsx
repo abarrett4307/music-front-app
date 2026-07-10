@@ -4,13 +4,15 @@ import "../styles/Basics.css";
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLayoutEffect,useState } from 'react';
 import fetchSongs from '../utils/fetchSongs';
+import fetchFriends from '../utils/fetchFriends';
 
 function Profile() {
     let params = useParams();
-    var user = getUser();
-    let navigate = useNavigate();
+    const user = getUser();
+    const navigate = useNavigate();
     let songs = [];
     const [songItems, setSongItems] = useState('');
+    const [friendItems,setFriendItems] = useState('');
 
 
 
@@ -27,6 +29,8 @@ function Profile() {
     async function getProfileInformation(username : string) {
         let songs = await fetchSongs(username);
         setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
+        let friends = await fetchFriends(username);
+        setFriendItems(friends.map((friend: any) => <li>{JSON.stringify(friend)}</li>));
     }
 
 
@@ -58,7 +62,7 @@ function Profile() {
                     </div>
                     <div className="Box-list" id="right-items">
                         <ListBox title="Friends" type='friend'>
-                            list
+                            <ul>{friendItems}</ul>
                         </ListBox>
                         <ListBox title="Clubs" type='club'>
                             list

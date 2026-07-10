@@ -29,4 +29,5 @@
     background-color: #8b6c5c;
     min-height: 96vh;
     padding: 0%;
+    max-width: 100vw;
 }

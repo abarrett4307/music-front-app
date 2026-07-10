@@ -1,3 +1,4 @@
+
 #boxes-items {
   display: flex;
   flex-direction: row;
@@ -25,4 +26,10 @@
     margin-left: 1vw;
     margin-top: 1vh;
     border-radius: 6px;
+}
+
+.Item-list {
+    flex: 1;
+    flex-wrap: wrap;
+    color: blue;
 }
