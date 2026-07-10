@@ -1,5 +1,6 @@
 import Taskbar from "../components/Taskbar";
 import ListBox from '../components/ListBox';
+import PopUp from '../components/PopUp';
 import '../styles/Dashboard.css'
 import '../styles/Basics.css'
 import fetchSongs from '../utils/fetchSongs';
@@ -43,7 +44,7 @@ function Dashboard() {
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type='music'>
-                            <button className='Add-button' onClick={loadForm}>Add Song Rating</button>
+                            <PopUp data={{buttonText: 'Add Song Rating',type:"music"}}   />
                             <ul className="Item-list">{songItems}</ul>
                         </ListBox>
                         <ListBox title="Tiers" type='tier'>
@@ -52,7 +53,7 @@ function Dashboard() {
                     </div>
                     <div className="Box-list" id="right-items">
                         <ListBox title="Friends" type='friend'>
-                            <button className='Add-button' onClick={loadForm}>Add Friend</button>
+                            <PopUp data={{buttonText: 'Add Friend',type:"friend"}}   />
                             <ul className="Item-list">{friendItems}</ul>
                         </ListBox>
                         <ListBox title="Clubs" type='club'>
