@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import TierList from './pages/TierList';
 import { basename } from 'path';
 import Profile from './pages/Profile';
+import Song from './pages/Song';
 
 const router = createBrowserRouter([
   {
@@ -35,12 +36,12 @@ const router = createBrowserRouter([
     element:<TierList />
   },
   {
-    path:'/profile/:id',
+    path:'/profile/:id?',
     element:<Profile />
   },
   {
-    path:'/profile/',
-    element:<Profile />
+    path:'/song/:id?',
+    element:<Song />
   }
 ], {basename:'/music-front-app'});
 

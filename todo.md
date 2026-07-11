@@ -1,16 +1,19 @@
 TODO:
  - create dashboard
- - Create Profile Page
- - enable music rating (make function on dashboard page)
  - design taskbar
  - edit accounts
+    - add about section and picture
+    - Create Profile Page
  - page for each song
+    - enable music rating
  - page for each album
  - page for each artist
+
  - create tier lists
  
  Scope creep:
  - everything clubs
+ - real authentication
 
  DONE:
 
