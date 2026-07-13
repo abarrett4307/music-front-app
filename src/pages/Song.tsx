@@ -1,16 +1,20 @@
 import { useNavigate, useParams } from "react-router-dom";
-import Taskbar from "../components/Taskbar";
-import "../styles/Basics.css"
 import { useLayoutEffect, useState } from "react";
+import Taskbar from "../components/Taskbar";
 import RatePopUp from "../components/RatePopUp";
+import "../styles/Basics.css"
+import "../styles/Song.css"
+import emptyPicture from '../assets/empty.jpg'
 
 function Song() {
 
     interface songResponse {
-        song_id:number,
-        album_id:number,
-        name:string,
-        duration:number
+        song_name:string,
+        album_name:string,
+        artist_name:string,
+        duration:number,
+        cover:string,
+        song_id:string
     }
 
     const params = useParams();
@@ -42,7 +46,17 @@ function Song() {
         <div>
             <Taskbar />
             <div className="Background">
-                <p> {JSON.stringify(song)}</p>
+                <div id="Song-contents" className="Row-div">
+                    <div className="Cover-box">
+                        <img src={song?.cover ?? emptyPicture} id="Img-logo" alt={`album cover for ${song?.album_name ?? 'unknown'}`} />
+                    </div>
+                    <div>
+                        <h1>{String(song?.song_name ?? '')}</h1>
+                        <h2>{String(song?.album_name ?? '')}</h2>
+                        <h2>{String(song?.artist_name ?? '')}</h2>
+                    </div>
+                </div>
+                    <p> {JSON.stringify(song)}</p>
                 <RatePopUp id={id} />
             </div>
         </div>

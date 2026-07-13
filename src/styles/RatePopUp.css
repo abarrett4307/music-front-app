@@ -1,8 +1,42 @@
 #scoreinput {
     height: 30%;
+    width: 80%;
+    margin-left: 3%;
 }
-
+#descriptioninput {
+    width: 80%;
+    margin-left: 2%;
+}
 #scorebox {
     align-items: center;
     margin:1vmin;
+    width: 100%;
+    
+}
+
+.Rate-window {
+    background-color: #3d251e; 
+    top: 40%;
+    bottom: 40%;
+    left: 30%;
+    right: 30%;
+    position: absolute;
+    height: 30vh;
+    width: 40vw;
+    background-color: #949494;
+    border-radius: 6px;
+    border-color: rgb(76, 76, 76);
+    border-style: solid;
+}
+
+.Rating-contents {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+    
+}
+
+#submit-button {
+    padding-right: 3%;
+    padding-left: 3%;
 }

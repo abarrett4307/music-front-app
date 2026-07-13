@@ -1,0 +1,14 @@
+.Cover-box {
+    height: 35vh;
+    width: 35vh;
+    border-color: black;
+    border-style: solid;
+    margin: 1vmin;
+    margin-right: 3vw;
+}
+
+#Song-contents {
+    display: flex;
+    max-width: 100vw;
+    padding: 2vmin;
+}
