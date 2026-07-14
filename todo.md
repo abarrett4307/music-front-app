@@ -1,14 +1,15 @@
 TODO:
  - create dashboard
+ - search for song
+ - add new song/album/artist
+ - page and rating for albums
+ - page for each artist
  - design taskbar
  - edit accounts
     - add about section and picture
     - Create Profile Page
- - page for each song
-    - enable music rating
+ - edit ratings
  - page for each album
- - page for each artist
-
  - create tier lists
  
  Scope creep:
@@ -20,3 +21,5 @@ TODO:
  - connect login
  - connect singup
  - create accounts
+ - page for each song
+    - enable music rating

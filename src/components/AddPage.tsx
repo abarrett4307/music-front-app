@@ -13,13 +13,22 @@ function AddPage(props:Pageprops) {
 
     const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
         setSongName(event.target.value);
-      };
+    };
+
+    const handleSubmit = () => {
+        if(props.type == 'song') {
+            navigate('/song/1');
+        }
+        if(props.type == 'friend') {
+            navigate('/song/1');
+        }
+    };
 
     return (
         <div id='Popup-Content'>
             <div id='search-div'>
                 <input placeholder={`Search for ${props.type}`} id='search-box' className='Inputbox' onChange={handleChangeName}></input>
-                <button onClick={() => {navigate('/song/1')}}>Submit</button>
+                <button onClick={() => {handleSubmit}}>Submit</button>
             </div>
             <p>{songName}</p>
         </div>

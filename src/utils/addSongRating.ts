@@ -5,7 +5,7 @@ async function addSongRating(inputscore:string,description:string,songid:string,
         alert('error with inputted score');
         return -1;
     }
-    const response = await fetch('/music-front-app/api/rate', {
+    const response = await fetch('/music-front-app/api/rate/song', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -17,7 +17,10 @@ async function addSongRating(inputscore:string,description:string,songid:string,
         username: username }), 
     }).then(response => response.json())
     
-    return await response.friends;
+    if (await response.status != '0') {
+        alert('error creating rating');
+    }
+    return await response.status;
 }
 
 export default addSongRating;

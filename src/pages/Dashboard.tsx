@@ -43,7 +43,7 @@ function Dashboard() {
                 <p className='Page-title'> My Dashboard</p>
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
-                        <ListBox title="Music" type='music'>
+                        <ListBox title="Music" type='song'>
                             <PopUp data={{buttonText: 'Add Song Rating',type:"music"}}   />
                             <ul className="Item-list">{songItems}</ul>
                         </ListBox>

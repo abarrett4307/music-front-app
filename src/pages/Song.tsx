@@ -56,7 +56,7 @@ function Song() {
                         <h2>{String(song?.artist_name ?? '')}</h2>
                     </div>
                 </div>
-                    <p> {JSON.stringify(song)}</p>
+                    {/*<p> {JSON.stringify(song)}</p>*/}
                 <RatePopUp id={id} />
             </div>
         </div>
