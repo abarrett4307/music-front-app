@@ -28,7 +28,7 @@ function AddPage(props:Pageprops) {
         <div id='Popup-Content'>
             <div id='search-div'>
                 <input placeholder={`Search for ${props.type}`} id='search-box' className='Inputbox' onChange={handleChangeName}></input>
-                <button onClick={() => {handleSubmit}}>Submit</button>
+                <button onClick={handleSubmit}>Submit</button>
             </div>
             <p>{songName}</p>
         </div>
