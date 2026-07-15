@@ -37,3 +37,22 @@
     display: flex;
     flex-direction: row;
 }
+
+.Centered {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.basic-button {
+  justify-content: center;
+  background-color:#f5ffd1;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  border-radius: 6px;
+  min-height: 20px;
+  height: 5vmin;
+  width: 15vmin;
+}

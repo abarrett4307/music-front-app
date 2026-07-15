@@ -5,7 +5,7 @@ import '../styles/Dashboard.css'
 import '../styles/Basics.css'
 import fetchSongs from '../utils/fetchSongs';
 import { useLayoutEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import fetchFriends from "../utils/fetchFriends";
 
 function Dashboard() {
@@ -44,7 +44,7 @@ function Dashboard() {
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type='song'>
-                            <PopUp data={{buttonText: 'Add Song Rating',type:"music"}}   />
+                            <PopUp data={{buttonText: 'Add Song Rating',type:"song"}}   />
                             <ul className="Item-list">{songItems}</ul>
                         </ListBox>
                         <ListBox title="Tiers" type='tier'>
@@ -60,6 +60,11 @@ function Dashboard() {
                             list
                         </ListBox>
                     </div>
+                </div>
+                <div id='bottom-text'>
+                    <p>
+                        <Link to="/contribute" className="RedirectButton" id="contribute-link">Add a new song to The Music Nest</Link>
+                    </p>
                 </div>
             </div>
             

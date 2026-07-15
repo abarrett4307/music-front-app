@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+import { basename } from 'path';
 
 import './index.css';
 import Login from './pages/Login';
@@ -9,9 +10,12 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import TierList from './pages/TierList';
-import { basename } from 'path';
 import Profile from './pages/Profile';
 import Song from './pages/Song';
+import CreateNavigator from './pages/CreateNavigator';
+import CreateArtist from './pages/CreateArtist';
+import CreateAlbum from './pages/CreateAlbum';
+import CreateSong from './pages/CreateSong';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +46,22 @@ const router = createBrowserRouter([
   {
     path:'/song/:id?',
     element:<Song />
+  },
+  {
+    path:'/contribute/',
+    element:<CreateNavigator />
+  },
+  {
+    path:'/contribute/artist',
+    element:<CreateArtist />
+  },
+  {
+    path:'/contribute/album',
+    element:<CreateAlbum />
+  },
+  {
+    path:'/contribute/song',
+    element:<CreateSong />
   }
 ], {basename:'/music-front-app'});
 

@@ -1,0 +1,15 @@
+#navigator-div {
+    padding: 3%;
+}
+
+#create-button {
+    margin: 1vmin;
+    height: 8vmin;
+    width: 32vmin;
+    font-size: 120%;
+    border-radius: 12px;
+}
+
+#contribute-title {
+    margin: 5vmin;
+}

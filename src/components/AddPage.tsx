@@ -19,8 +19,11 @@ function AddPage(props:Pageprops) {
         if(props.type == 'song') {
             navigate('/song/1');
         }
-        if(props.type == 'friend') {
-            navigate('/song/1');
+        else if(props.type == 'friend') {
+            navigate('/profile');
+        }
+        else {
+            navigate('/dashboard');
         }
     };
 
