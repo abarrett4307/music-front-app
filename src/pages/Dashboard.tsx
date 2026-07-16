@@ -26,9 +26,9 @@ function Dashboard() {
 
     async function getProfileInformation(username : string) {
         let songs = await fetchSongs(username);
-        setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
+        setSongItems(songs.map((song: any) => <li><Link style={{ color: "black"}} to={`/song/${song.song_id}`}>{JSON.stringify(song)}</Link></li>));
         let friends = await fetchFriends(username);
-        setFriendItems(friends.map((friend: any) => <li>{JSON.stringify(friend)}</li>));
+        setFriendItems(friends.map((friend: any) => <li><Link style={{ color: "black"}} to={`/profile/${(friend.usernameone == user) ? friend.usernametwo : friend.usernameone}`}>{(friend.usernameone == user) ? friend.usernametwo : friend.usernameone}</Link></li>));
     }
 
 

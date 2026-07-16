@@ -33,7 +33,7 @@
 .Item-list {
     flex: 1;
     flex-wrap: wrap;
-    color: blue;
+    color: black;
 }
 
 #contribute-link {

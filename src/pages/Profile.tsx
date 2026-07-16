@@ -1,7 +1,7 @@
 import Taskbar from '../components/Taskbar';
 import ListBox from '../components/ListBox';
 import "../styles/Basics.css";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useLayoutEffect,useState } from 'react';
 import fetchSongs from '../utils/fetchSongs';
 import fetchFriends from '../utils/fetchFriends';
@@ -28,9 +28,9 @@ function Profile() {
 
     async function getProfileInformation(username : string) {
         let songs = await fetchSongs(username);
-        setSongItems(songs.map((song: any) => <li>{JSON.stringify(song)}</li>));
+        setSongItems(songs.map((song: any) => <li><Link style={{ color: "black"}} to={`/song/${song.song_id}`}>{JSON.stringify(song)}</Link></li>));
         let friends = await fetchFriends(username);
-        setFriendItems(friends.map((friend: any) => <li>{JSON.stringify(friend)}</li>));
+        setFriendItems(friends.map((friend: any) => <li><Link style={{ color: "black"}} to={`/profile/${(friend.usernameone == user) ? friend.usernametwo : friend.usernameone}`}>{(friend.usernameone == user) ? friend.usernametwo : friend.usernameone}</Link></li>));
     }
 
 
@@ -50,7 +50,7 @@ function Profile() {
         <div>
             <Taskbar />
             <div className="Background">
-                <p className='Page-title'> {user}'s  Profile </p>
+                <p className='Page-title'>{user}'s Profile</p>
                 <div id='boxes-items'>
                     <div  className="Box-list" id="left-items">
                         <ListBox title="Music" type="music">
