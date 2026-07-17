@@ -16,6 +16,7 @@ import CreateNavigator from './pages/CreateNavigator';
 import CreateArtist from './pages/CreateArtist';
 import CreateAlbum from './pages/CreateAlbum';
 import CreateSong from './pages/CreateSong';
+import Album from './pages/Album';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path:'/song/:id?',
     element:<Song />
+  },
+  {
+    path:'/album/:id?',
+    element:<Album />
   },
   {
     path:'/contribute/',

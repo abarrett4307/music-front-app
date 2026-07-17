@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { useLayoutEffect, useState } from "react";
 import Taskbar from "../components/Taskbar";
 import RatePopUp from "../components/RatePopUp";
@@ -14,13 +14,14 @@ function Song() {
         artist_name:string,
         duration:number,
         cover:string,
-        song_id:string
+        song_id:string,
+        album_id:string
     }
 
     const params = useParams();
     const navigate = useNavigate();
     const [song, setSong] = useState<songResponse>();
-    const [id, setId] = useState('100');
+    const [id, setId] = useState('0');
 
     async function getSong() {
         const response = await fetch(`/music-front-app/api/song/${params.id}`, {
@@ -52,12 +53,12 @@ function Song() {
                     </div>
                     <div>
                         <h1>{String(song?.song_name ?? '')}</h1>
-                        <h2>{String(song?.album_name ?? '')}</h2>
+                        <Link style={{color:'black'}} to={`/album/${song?.album_id ?? ''}`}><h2>{String(song?.album_name ?? '')}</h2></Link>
                         <h2>{String(song?.artist_name ?? '')}</h2>
                     </div>
                 </div>
                     {/*<p> {JSON.stringify(song)}</p>*/}
-                <RatePopUp id={id} />
+                <RatePopUp type='song' id={id} />
             </div>
         </div>
     );

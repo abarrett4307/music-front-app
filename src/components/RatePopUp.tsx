@@ -5,9 +5,11 @@ import '../styles/PopUp.css'
 import '../styles/Basics.css'
 import '../styles/RatePopUp.css'
 import addSongRating from '../utils/addSongRating';
+import addAlbumRating from '../utils/addAlbumRating';
 
 interface PopUpProps {
   id:string
+  type:string
 }
 
 interface PopUpState {
@@ -42,8 +44,18 @@ class RatePopUp extends React.Component<PopUpProps, PopUpState> {
       alert('login to continue');
     }
     else {
-      addSongRating(this.state.score,this.state.description,this.props.id,username);
-      this.setState(prevState => ({ modalOpened: !prevState.modalOpened }));
+      if(this.props.type =='song') {
+        addSongRating(this.state.score,this.state.description,this.props.id,username);
+        this.setState(prevState => ({ modalOpened: !prevState.modalOpened }));
+      }
+      else if (this.props.type =='album'){
+        addAlbumRating(this.state.score,this.state.description,this.props.id,username);
+        this.setState(prevState => ({ modalOpened: !prevState.modalOpened }));
+      }
+      else {
+        alert('rate type error');
+        this.setState(prevState => ({ modalOpened: !prevState.modalOpened }));
+      }
     }
   }
 
@@ -60,9 +72,9 @@ class RatePopUp extends React.Component<PopUpProps, PopUpState> {
           contentLabel="Modal with image"
           className="Rate-window"
         >
-          <button className="Add-button" onClick={this.toggleModal}> click to close </button>
+          <button className="Add-button" onClick={this.toggleModal}>click to close</button>
           <div className='Rating-contents'>
-            <h2>Add Rating for 'song'</h2>
+            <h2>Add Rating for {this.props.type}</h2>
             <div className='Row-div' id="scorebox">
               <p>Score:</p>
               <input className='Inputbox' id='scoreinput' placeholder='Score out of 100' onChange={this.handleChangeScore}></input>
