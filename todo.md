@@ -1,4 +1,5 @@
 TODO:
+ - !!MAKE Artist search selectable on create single page
  - create dashboard
  - search for song
  - add new song/album/artist

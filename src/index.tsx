@@ -15,8 +15,9 @@ import Song from './pages/Song';
 import CreateNavigator from './pages/CreateNavigator';
 import CreateArtist from './pages/CreateArtist';
 import CreateAlbum from './pages/CreateAlbum';
-import CreateSong from './pages/CreateSong';
+import CreateSong from './pages/CreateSingle';
 import Album from './pages/Album';
+import CreateSingle from './pages/CreateSingle';
 
 const router = createBrowserRouter([
   {
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/contribute/song',
-    element:<CreateSong />
+    element:<CreateSingle />
   }
 ], {basename:'/music-front-app'});
 

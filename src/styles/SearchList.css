@@ -1,0 +1,12 @@
+.Search-list {
+    border-radius: 3px;
+    border-style: solid;
+    border-color: black;
+    container-type: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 15vw;
+    padding: 0.5%;
+    overflow-y: scroll;
+    max-height: 20vh;
+}
