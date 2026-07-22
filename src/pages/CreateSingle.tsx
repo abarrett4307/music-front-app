@@ -11,6 +11,7 @@ function CreateSingle() {
     var image:string;
     const [artist,setArtist] = useState('');
     const [results,setResults] = useState([]);
+    const [selected,setSelected] = useState('');
 
     const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
         songName = event.target.value;
@@ -27,7 +28,7 @@ function CreateSingle() {
     };
 
     function submitArtist() {
-        createSingle(songName,duration,image);
+        createSingle(songName,duration,image,selected);
     }
 
     const searchArtists = (input:string) => {
@@ -51,7 +52,7 @@ function CreateSingle() {
                     <input placeholder='Link to Cover Picture' className='Inputbox' onChange={handleChangeDuration}></input>                    
                     <input placeholder='Duration in seconds' className='Inputbox' onChange={handleChangeImage}></input>             
                     <input placeholder='Artist Name' className='Inputbox' onChange={handleChangeArtist}></input>
-                    <SearchList results={results}/>
+                    <SearchList results={results} passUp={(value: string) => { setSelected(value); return {}; }}/>
                     <button className='basic-button' onClick={submitArtist}>Submit</button>
                 </div>
             </div>

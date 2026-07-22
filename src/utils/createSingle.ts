@@ -1,4 +1,4 @@
-async function createSingle(song_name:string,inputduration:string,image:string) {
+async function createSingle(song_name:string,inputduration:string,image:string,artist_id:string) {
     var duration:number = parseInt(inputduration);
     const response = await fetch('/music-front-app/api/add/song', {
       method: 'POST',
@@ -8,7 +8,8 @@ async function createSingle(song_name:string,inputduration:string,image:string) 
       body: JSON.stringify({ 
         song_name: song_name,
         duration: duration,
-        image_link: image
+        image_link: image,
+        artist_id: artist_id
       }), 
     }).then(response => response.json());
     
