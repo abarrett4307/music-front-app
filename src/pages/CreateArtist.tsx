@@ -3,10 +3,12 @@ import { ChangeEvent } from 'react';
 import Taskbar from '../components/Taskbar';
 import '../styles/Basics.css'
 import createArtist from '../utils/createArtist';
+import { useNavigate } from 'react-router-dom';
 
 function CreateArtist() {
     var artistName:string;
     var imageLink:string;
+    const navigate = useNavigate();
 
     const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
         artistName = event.target.value;
@@ -15,8 +17,11 @@ function CreateArtist() {
         imageLink = (event.target.value);
       };
 
-    function submitArtist() {
-        createArtist(artistName,imageLink);
+    async function submitArtist() {
+        const result = await createArtist(artistName,imageLink);
+        if (result == '0') {
+            navigate('/dashboard');
+        }
     }
 
     return (
