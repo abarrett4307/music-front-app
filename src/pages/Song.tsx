@@ -15,7 +15,8 @@ function Song() {
         duration:number,
         cover:string,
         song_id:string,
-        album_id:string
+        album_id:string,
+        artist_id:string;
     }
 
     const params = useParams();
@@ -54,7 +55,7 @@ function Song() {
                     <div>
                         <h1>{String(song?.song_name ?? '')}</h1>
                         <Link style={{color:'black'}} to={`/album/${song?.album_id ?? ''}`}><h2>{String(song?.album_name ?? '')}</h2></Link>
-                        <h2>{String(song?.artist_name ?? '')}</h2>
+                        <Link style={{color:'black'}} to={`/artist/${song?.artist_id ?? ''}`}><h2>{String(song?.artist_name ?? '')}</h2></Link>
                     </div>
                 </div>
                     {/*<p> {JSON.stringify(song)}</p>*/}
