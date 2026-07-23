@@ -5,10 +5,13 @@
     container-type: flex;
     flex-direction: row;
     background-color: white;
-    width: 15vw;
-    padding: 0.5%;
+    width: 80%;
+    padding: 1%;
+    margin: 1%;
     overflow-y: scroll;
     max-height: 20vh;
+    min-height: 10vh;
+    background-color: #af9576 ;
 }
 
 .List-item:hover {

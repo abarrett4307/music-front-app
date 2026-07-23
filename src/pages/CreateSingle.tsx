@@ -32,8 +32,6 @@ function CreateSingle() {
         if (result == '0') {
             navigate('/dashboard');
         }
-
-        
     }
 
     const searchArtists = (input:string) => {
@@ -43,7 +41,6 @@ function CreateSingle() {
         fetch(`/music-front-app/api/search/artists/${input}`, {
             method: 'GET',
         }).then(response => response.json()).then((response) => {(response)? setResults(response) : setResults([])});
-
     }
 
     return (
