@@ -15,6 +15,8 @@ TODO:
  Scope creep:
  - everything clubs
  - real authentication
+ - find real online host
+   - after real authentication and some kind of rate limiting
 
  DONE:
  - search for song/profile

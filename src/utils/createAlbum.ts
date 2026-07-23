@@ -1,4 +1,4 @@
-async function createAlbum(artistid:string,albumname:string,cover:string) {
+async function createAlbum(artistid:string,albumname:string,cover:string,songList:{ song_name: string, duration: string }[]) {
     const response = await fetch('/music-front-app/api/add/album', {
       method: 'POST',
       headers: {
@@ -7,7 +7,8 @@ async function createAlbum(artistid:string,albumname:string,cover:string) {
       body: JSON.stringify({ 
         artist: artistid,
         album: albumname,
-        cover: cover
+        cover: cover,
+        song_list: songList
       }), 
     }).then(response => response.json());
     

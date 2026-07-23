@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useLayoutEffect } from 'react';
 import '../styles/SearchList.css'
 
 interface ListProps {
@@ -8,7 +8,7 @@ interface ListProps {
 
 
 function SearchList(props:ListProps) {
-    const [selected,setSelected] = useState('aba');
+    const [selected,setSelected] = useState('');
 
     function handleSelect(event: MouseEvent<HTMLDivElement>) {
             event.currentTarget.classList.toggle('selected');
@@ -18,6 +18,15 @@ function SearchList(props:ListProps) {
             props.passUp(event.currentTarget.getAttribute('id') ?? '');
     }
 
+    useLayoutEffect(()=>{
+        const elements = document.querySelectorAll('.List-item');
+
+        elements.forEach(element => {
+            element.classList.remove('selected');
+        });
+        setSelected('');
+    },[props.results])
+
 
 
 
@@ -26,6 +35,7 @@ function SearchList(props:ListProps) {
             {props.results.map((result,id) => (
                 <div key={id} id={result.artist_id ?? result.song_id ?? result.username} onClick={handleSelect} className='List-item'>{result.artist_name ?? result.song_name ?? result.username}</div>
             ))}
+            <p>{selected}</p>
         </div>
     );
 }
